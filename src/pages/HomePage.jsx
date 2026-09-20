@@ -97,9 +97,9 @@ export default function HomePage() {
   };
 
     return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-hidden">
       {/* Hero Section with Carousel */}
-      <section className="relative h-screen">
+      <section className="relative min-h-[680px] h-[100svh] max-h-[900px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -151,9 +151,9 @@ export default function HomePage() {
 
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity:  0.4 }}
-                    className="text-lg sm:t1, y: 0 }}
-                    transition={{ delay:ext-xl text-gray-300 mb-8"
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed"
                   >
                     {heroSlides[currentSlide].subtitle}
                   </motion.p>
@@ -198,6 +198,8 @@ export default function HomePage() {
                 {heroSlides.map((_, index) => (
                   <button
                     key={index}
+                    type="button"
+                    aria-label={`Show slide ${index + 1}`}
                     onClick={() => setCurrentSlide(index)}
                     className={`w-12 h-1 rounded-full transition-all duration-300 ${
                       index === currentSlide ? 'bg-blue-400 w-16' : 'bg-white/30'
@@ -207,6 +209,8 @@ export default function HomePage() {
               </div>
               <div className="flex gap-2">
                 <motion.button
+                  type="button"
+                  aria-label="Previous slide"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={prevSlide}
@@ -215,6 +219,8 @@ export default function HomePage() {
                   <ChevronLeft className="w-5 h-5" />
                 </motion.button>
                 <motion.button
+                  type="button"
+                  aria-label="Next slide"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={nextSlide}
@@ -288,7 +294,7 @@ export default function HomePage() {
                   <h3 className="text-xl text-slate-900 mb-3">{service.title}</h3>
                   <p className="text-gray-600 mb-4">{service.description}</p>
                   <Link
-                    to="/services"
+                    to={`/service#${service.title === 'Ocean Freight' ? 'ocean' : service.title === 'Air Freight' ? 'air' : service.title === 'Land Transportation' ? 'land' : 'warehousing'}`}
                     className="text-blue-600 hover:text-blue-700 inline-flex items-center gap-2 transition-colors duration-200"
                   >
                     Learn more
@@ -363,23 +369,27 @@ export default function HomePage() {
               Get a customized quote for your shipping needs. Our experts are ready to help you find the perfect logistics solution.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact">
-                <motion.button
+              <Link
+                to="/contact"
+                className="w-full sm:w-auto px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-colors duration-200 inline-flex items-center justify-center"
+              >
+                <motion.span
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-colors duration-200"
                 >
                   Request a Quote
-                </motion.button>
+                </motion.span>
               </Link>
-              <Link to="/services">
-                <motion.button
+              <Link
+                to="/service"
+                className="w-full sm:w-auto px-8 py-4 bg-transparent text-white border-2 border-white rounded-lg hover:bg-white/10 transition-colors duration-200 inline-flex items-center justify-center"
+              >
+                <motion.span
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto px-8 py-4 bg-transparent text-white border-2 border-white rounded-lg hover:bg-white/10 transition-colors duration-200"
                 >
                   Explore Services
-                </motion.button>
+                </motion.span>
               </Link>
             </div>
           </motion.div>
