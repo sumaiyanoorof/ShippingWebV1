@@ -1,143 +1,200 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  Globe, Clock, Shield, Award, TrendingUp, Users, 
-  Zap, CheckCircle, Target, Headphones, Lock, Truck 
-} from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Globe,
+  Clock,
+  Shield,
+  Award,
+  TrendingUp,
+  Users,
+  Zap,
+  CheckCircle,
+  Target,
+  Headphones,
+  Lock,
+  Truck,
+} from "lucide-react";
+import shipImage from "../assets/shipImage9.jpg";
 
 export default function WhyChooseUsPage() {
   const mainFeatures = [
     {
       icon: Globe,
-      title: 'Global Network',
-      description: 'Operating in over 150 countries with strategic partnerships across major ports, airports, and logistics hubs worldwide.',
-      stats: '150+ Countries',
+      title: "Global Network",
+      description:
+        "Operating in over 150 countries with strategic partnerships across major ports, airports, and logistics hubs worldwide.",
+      stats: "150+ Countries",
     },
     {
       icon: Clock,
-      title: 'On-Time Delivery',
-      description: 'Industry-leading 98% on-time delivery rate backed by advanced tracking systems and optimized routing.',
-      stats: '98% Success Rate',
+      title: "On-Time Delivery",
+      description:
+        "Industry-leading 98% on-time delivery rate backed by advanced tracking systems and optimized routing.",
+      stats: "98% Success Rate",
     },
     {
       icon: Shield,
-      title: 'Secure & Safe',
-      description: 'Comprehensive insurance coverage and state-of-the-art security measures to protect your valuable cargo.',
-      stats: '100% Insured',
+      title: "Secure & Safe",
+      description:
+        "Comprehensive insurance coverage and state-of-the-art security measures to protect your valuable cargo.",
+      stats: "100% Insured",
     },
     {
       icon: Award,
-      title: 'Industry Experience',
-      description: 'Over 20 years of excellence in international logistics with thousands of satisfied clients globally.',
-      stats: '20+ Years',
+      title: "Industry Experience",
+      description:
+        "Over 20 years of excellence in international logistics with thousands of satisfied clients globally.",
+      stats: "20+ Years",
     },
   ];
 
   const benefits = [
     {
       icon: Zap,
-      title: 'Fast Processing',
-      description: 'Streamlined customs clearance and documentation for quick turnaround times.',
+      title: "Fast Processing",
+      description:
+        "Streamlined customs clearance and documentation for quick turnaround times.",
     },
     {
       icon: Target,
-      title: 'Tailored Solutions',
-      description: 'Customized logistics strategies designed to meet your specific business needs.',
+      title: "Tailored Solutions",
+      description:
+        "Customized logistics strategies designed to meet your specific business needs.",
     },
     {
       icon: Headphones,
-      title: '24/7 Support',
-      description: 'Round-the-clock customer service team available in multiple languages.',
+      title: "24/7 Support",
+      description:
+        "Round-the-clock customer service team available in multiple languages.",
     },
     {
       icon: TrendingUp,
-      title: 'Cost Efficiency',
-      description: 'Competitive pricing with transparent billing and no hidden charges.',
+      title: "Cost Efficiency",
+      description:
+        "Competitive pricing with transparent billing and no hidden charges.",
     },
     {
       icon: Lock,
-      title: 'Data Security',
-      description: 'Advanced cybersecurity measures to protect your sensitive information.',
+      title: "Data Security",
+      description:
+        "Advanced cybersecurity measures to protect your sensitive information.",
     },
     {
       icon: Truck,
-      title: 'Modern Fleet',
-      description: 'Well-maintained vehicles and equipment with GPS tracking capabilities.',
+      title: "Modern Fleet",
+      description:
+        "Well-maintained vehicles and equipment with GPS tracking capabilities.",
     },
   ];
 
   const testimonials = [
     {
-      name: 'David Martinez',
-      company: 'Global Electronics Inc.',
-      role: 'Supply Chain Director',
-      quote: 'SwiftShip has transformed our international logistics operations. Their reliability and efficiency have helped us reduce shipping costs by 30% while improving delivery times.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400',
+      name: "David Martinez",
+      company: "Global Electronics Inc.",
+      role: "Supply Chain Director",
+      quote:
+        "SwiftShip has transformed our international logistics operations. Their reliability and efficiency have helped us reduce shipping costs by 30% while improving delivery times.",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
       rating: 5,
     },
     {
-      name: 'Lisa Chen',
-      company: 'Fashion Forward Ltd.',
-      role: 'Operations Manager',
-      quote: 'The team at SwiftShip goes above and beyond. Their customer service is exceptional, and they always find solutions to complex shipping challenges.',
-      image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400',
+      name: "Lisa Chen",
+      company: "Fashion Forward Ltd.",
+      role: "Operations Manager",
+      quote:
+        "The team at SwiftShip goes above and beyond. Their customer service is exceptional, and they always find solutions to complex shipping challenges.",
+      image:
+        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400",
       rating: 5,
     },
     {
-      name: 'Ahmed Hassan',
-      company: 'Tech Innovations Co.',
-      role: 'CEO',
-      quote: 'We\'ve been working with SwiftShip for 5 years. Their global network and tracking technology give us complete visibility and peace of mind.',
-      image: 'https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400',
+      name: "Ahmed Hassan",
+      company: "Tech Innovations Co.",
+      role: "CEO",
+      quote:
+        "We've been working with SwiftShip for 5 years. Their global network and tracking technology give us complete visibility and peace of mind.",
+      image:
+        "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400",
       rating: 5,
     },
   ];
 
   const certifications = [
-    'ISO 9001:2015 Certified',
-    'IATA Accredited',
-    'C-TPAT Certified',
-    'AEO Authorized',
-    'Green Logistics Certified',
-    'SOC 2 Compliant',
+    "ISO 9001:2015 Certified",
+    "IATA Accredited",
+    "C-TPAT Certified",
+    "AEO Authorized",
+    "Green Logistics Certified",
+    "SOC 2 Compliant",
   ];
 
   const stats = [
-    { number: '50,000+', label: 'Annual Shipments', icon: Truck },
-    { number: '5,000+', label: 'Happy Clients', icon: Users },
-    { number: '150+', label: 'Countries Served', icon: Globe },
-    { number: '98%', label: 'Customer Satisfaction', icon: Award },
+    { number: "50,000+", label: "Annual Shipments", icon: Truck },
+    { number: "5,000+", label: "Happy Clients", icon: Users },
+    { number: "150+", label: "Countries Served", icon: Globe },
+    { number: "98%", label: "Customer Satisfaction", icon: Award },
   ];
 
-    return (
-    <div className="min-h-screen pt-16 lg:pt-20">
+  return (
+    <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-slate-900 to-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-170 h-[min(860px,100svh)] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={shipImage}
+            alt="Cargo ship at sea"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(8,29,48,0.94)_0%,rgba(16,42,67,0.72)_54%,rgba(18,184,156,0.18)_100%)]" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="mb-6"
+          >
+            <span className="inline-block px-4 py-2 bg-blue-600/20 border border-blue-400/30 rounded-full text-blue-400 backdrop-blur-sm">
+              Why Choose Us
+            </span>
+          </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
+            transition={{ duration: 0.8 }}
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mb-6"
+            <motion.h1
+              className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-white mb-10 max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-2 bg-blue-600/20 border border-blue-400/30 rounded-full text-blue-400 backdrop-blur-sm">
-                Why Choose Us
-              </span>
-            </motion.div>
-            <h1 className="text-4xl lg:text-5xl text-white mb-6">
               Your Trusted Shipping Partner
-            </h1>
-            <p className="text-lg text-gray-300">
-              Experience the difference of working with a logistics provider that prioritizes reliability, innovation, and customer success.
-            </p>
+            </motion.h1>
+            <motion.p
+              className="text-base sm:text-xl leading-relaxed text-white/90 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
+              Experience the difference of working with a logistics provider
+              that prioritizes reliability, innovation, and customer success.
+            </motion.p>
           </motion.div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 mb-6"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+        >
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1">
+            <div className="w-1.5 h-3 bg-white/50 rounded-full" />
+          </div>
+        </motion.div>
       </section>
 
       {/* Main Features */}
@@ -156,7 +213,8 @@ export default function WhyChooseUsPage() {
               What Sets Us Apart
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Industry-leading capabilities that ensure your cargo is in the best hands.
+              Industry-leading capabilities that ensure your cargo is in the
+              best hands.
             </p>
           </motion.div>
 
@@ -171,12 +229,14 @@ export default function WhyChooseUsPage() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -8 }}
-                  className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                  className="bg-linear-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
                 >
                   <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                     <Icon className="w-7 h-7 text-blue-600" />
                   </div>
-                  <h3 className="text-xl text-slate-900 mb-2">{feature.title}</h3>
+                  <h3 className="text-xl text-slate-900 mb-2">
+                    {feature.title}
+                  </h3>
                   <p className="text-gray-600 mb-4">{feature.description}</p>
                   <div className="text-2xl text-blue-600">{feature.stats}</div>
                 </motion.div>
@@ -216,11 +276,13 @@ export default function WhyChooseUsPage() {
                   className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
                       <Icon className="w-6 h-6 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="text-lg text-slate-900 mb-2">{benefit.title}</h3>
+                      <h3 className="text-lg text-slate-900 mb-2">
+                        {benefit.title}
+                      </h3>
                       <p className="text-gray-600">{benefit.description}</p>
                     </div>
                   </div>
@@ -231,7 +293,7 @@ export default function WhyChooseUsPage() {
         </div>
       </section>
 
-            {/* Testimonials */}
+      {/* Testimonials */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -247,7 +309,8 @@ export default function WhyChooseUsPage() {
               What Our Clients Say
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Don't just take our word for it - hear from businesses that trust us with their logistics needs.
+              Don't just take our word for it - hear from businesses that trust
+              us with their logistics needs.
             </p>
           </motion.div>
 
@@ -259,7 +322,7 @@ export default function WhyChooseUsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl shadow-lg"
+                className="bg-linear-to-br from-blue-50 to-white p-6 rounded-xl shadow-lg"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -272,7 +335,9 @@ export default function WhyChooseUsPage() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
+                <p className="text-gray-700 mb-6 italic">
+                  "{testimonial.quote}"
+                </p>
                 <div className="flex items-center gap-4">
                   <img
                     src={testimonial.image}
@@ -281,8 +346,12 @@ export default function WhyChooseUsPage() {
                   />
                   <div>
                     <div className="text-slate-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.role}</div>
-                    <div className="text-sm text-blue-600">{testimonial.company}</div>
+                    <div className="text-sm text-gray-600">
+                      {testimonial.role}
+                    </div>
+                    <div className="text-sm text-blue-600">
+                      {testimonial.company}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -292,7 +361,7 @@ export default function WhyChooseUsPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+      <section className="py-20 bg-linear-to-br from-slate-900 to-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -374,7 +443,8 @@ export default function WhyChooseUsPage() {
               Ready to Experience the Difference?
             </h2>
             <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join thousands of satisfied clients who trust SwiftShip for their global logistics needs.
+              Join thousands of satisfied clients who trust SwiftShip for their
+              global logistics needs.
             </p>
             <motion.a
               href="/contact"

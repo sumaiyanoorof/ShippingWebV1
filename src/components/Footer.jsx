@@ -119,17 +119,17 @@ export default function Footer() {
             <h3 className="text-white mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-blue-400 mt-0.5 shrink-0" />
                 <span>123 Port Avenue, Logistics District, New York, NY 10001</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-blue-400 shrink-0" />
                 <a href="tel:+1234567890" className="hover:text-blue-400 transition-colors duration-200">
                   +1 (234) 567-890
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-blue-400 shrink-0" />
                 <a href="mailto:info@swiftship.com" className="hover:text-blue-400 transition-colors duration-200">
                   info@swiftship.com
                 </a>

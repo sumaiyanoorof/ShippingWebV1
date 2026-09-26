@@ -1,6 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Ship, Plane, Truck, Warehouse, Package, Globe2, BarChart3, Clock, Shield, ArrowRight } from 'lucide-react';
+import shipImage1 from '../assets/shipImage5.jpg';
+import shipImage2 from '../assets/shipImage2.jpg';
+import shipImage3 from '../assets/shipImage10.jpg';
+import shipImage4 from '../assets/shipImage3.jpg';
+
 
 export default function ServicePage() {
   const services = [
@@ -17,7 +22,7 @@ export default function ServicePage() {
         'Cargo insurance and tracking',
         'Specialized handling for oversized cargo',
       ],
-      image: 'https://images.unsplash.com/photo-1735047974891-df59713d8192?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJnbyUyMHNoaXAlMjBjb250YWluZXIlMjBwb3J0fGVufDF8fHx8MTc2NTU5OTc3Mnww&ixlib=rb-4.1.0&q=80&w=1080',
+      image: shipImage2,
       color: 'blue',
     },
     {
@@ -49,7 +54,7 @@ export default function ServicePage() {
         'Refrigerated and specialized transport',
         'GPS tracking and route optimization',
       ],
-      image: 'https://images.unsplash.com/photo-1624383828664-3a1c84526d1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZWxpdmVyeSUyMHRydWNrJTIwaGlnaHdheXxlbnwxfHx8fDE3NjU1MjI1OTB8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: shipImage3,
       color: 'cyan',
     },
     {
@@ -81,7 +86,7 @@ export default function ServicePage() {
         'Risk management and compliance',
         'Performance analytics and reporting',
       ],
-      image: 'https://images.unsplash.com/photo-1713078044558-cdb22828cf07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnbG9iYWwlMjBsb2dpc3RpY3MlMjBuZXR3b3JrfGVufDF8fHx8MTc2NTU3MzY4OHww&ixlib=rb-4.1.0&q=80&w=1080',
+      image: shipImage4,
       color: 'indigo',
     },
   ];
@@ -94,35 +99,67 @@ export default function ServicePage() {
   ];
 
     return (
-    <div className="min-h-screen pt-16 lg:pt-20">
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-slate-900 to-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mb-6"
-            >
-              <span className="inline-block px-4 py-2 bg-blue-600/20 border border-blue-400/30 rounded-full text-blue-400 backdrop-blur-sm">
-                Our Services
-              </span>
-            </motion.div>
-            <h1 className="text-4xl lg:text-5xl text-white mb-6">
-              Comprehensive Logistics Solutions
-            </h1>
-            <p className="text-lg text-gray-300">
-              From ocean to air, land to warehousing – we provide end-to-end shipping solutions tailored to your business needs.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+    <div className="min-h-screen pt-16">
+            {/* Hero Section */}
+            <section className="relative min-h-170 h-[min(860px,100svh)] flex items-center justify-center overflow-hidden">
+              <div className="absolute inset-0 z-0">
+                <img
+                  src={shipImage1}
+                  alt="Cargo ship at sea"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(8,29,48,0.94)_0%,rgba(16,42,67,0.72)_54%,rgba(18,184,156,0.18)_100%)]" />
+              </div>
+      
+              <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.2 }}
+                    className="mb-6"
+                  >
+                    <span className="inline-block px-4 py-2 bg-blue-600/20 border border-blue-400/30 rounded-full text-blue-400 backdrop-blur-sm">
+                       Our Services
+                    </span>
+                  </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <motion.h1
+                    className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-white mb-10 max-w-4xl mx-auto"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.8 }}
+                  >
+                   Comprehensive Logistics Solutions
+                  </motion.h1>
+                  <motion.p
+                    className="text-base sm:text-xl leading-relaxed text-white/90 max-w-2xl mx-auto"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.8 }}
+                  >
+                    From ocean to air, land to warehousing – we provide end-to-end shipping solutions tailored to your business needs.
+                  </motion.p>
+      
+                </motion.div>
+              </div>
+      
+              {/* Scroll Indicator */}
+              <motion.div
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 mb-6"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+              >
+                <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1">
+                  <div className="w-1.5 h-3 bg-white/50 rounded-full" />
+                </div>
+              </motion.div>
+            </section>
+      
+      
 
       {/* Services Detail Section */}
       <section className="py-20 bg-white">
@@ -158,7 +195,7 @@ export default function ServicePage() {
                         alt={service.title}
                         className="w-full h-[400px] object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+                      <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent" />
                     </div>
                   </motion.div>
 
@@ -191,7 +228,7 @@ export default function ServicePage() {
                           transition={{ delay: idx * 0.1 }}
                           className="flex items-start gap-3"
                         >
-                          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0" />
+                          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 shrink-0" />
                           <span className="text-gray-700">{feature}</span>
                         </motion.div>
                       ))}
@@ -260,7 +297,7 @@ export default function ServicePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+      <section className="py-20 bg-linear-to-br from-slate-900 to-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Eye, Award, Users, TrendingUp, Globe2, Shield, Clock } from 'lucide-react';
+import shipImage1 from '../assets/shipImage2.jpg';
+
 
 export default function AboutPage() {
   const values = [
@@ -62,17 +64,20 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen pt-16 lg:pt-20">
+    <div className="min-h-screen pt-16 ">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-slate-900 to-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-170 h-[min(860px,100svh)] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={shipImage1}
+            alt="Cargo ship at sea"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(8,29,48,0.94)_0%,rgba(16,42,67,0.72)_54%,rgba(18,184,156,0.18)_100%)]" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
@@ -82,14 +87,41 @@ export default function AboutPage() {
                 About SwiftShip LLC
               </span>
             </motion.div>
-            <h1 className="text-4xl lg:text-5xl text-white mb-6">
-              Leading the Future of Global Logistics
-            </h1>
-            <p className="text-lg text-gray-300">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.h1
+              className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-white mb-10 max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+             Leading the Future of Global Logistics
+            </motion.h1>
+            <motion.p
+              className="text-base sm:text-xl leading-relaxed text-white/90 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
               With over two decades of excellence, we connect businesses worldwide through innovative shipping solutions and unwavering commitment to service quality.
-            </p>
+            </motion.p>
+
           </motion.div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 mb-6"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+        >
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1">
+            <div className="w-1.5 h-3 bg-white/50 rounded-full" />
+          </div>
+        </motion.div>
       </section>
 
             {/* Mission & Vision */}
@@ -101,7 +133,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 lg:p-12 rounded-2xl"
+              className="bg-linear-to-br from-blue-50 to-blue-100 p-8 lg:p-12 rounded-2xl"
             >
               <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
                 <Target className="w-8 h-8 text-white" />
@@ -117,7 +149,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-slate-50 to-slate-100 p-8 lg:p-12 rounded-2xl"
+              className="bg-linear-to-br from-slate-50 to-slate-100 p-8 lg:p-12 rounded-2xl"
             >
               <div className="w-16 h-16 bg-slate-700 rounded-xl flex items-center justify-center mb-6">
                 <Eye className="w-8 h-8 text-white" />
@@ -232,7 +264,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+      <section className="py-20 bg-linear-to-br from-slate-900 to-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

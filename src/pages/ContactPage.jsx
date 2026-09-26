@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
+import shipImage from '../assets/shipImage7.jpg';
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -60,35 +62,65 @@ const handleChange = (e) => {
   ];
 
   return (
-    <div className="min-h-screen pt-16 lg:pt-20">
+    <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-slate-900 to-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mb-6"
-            >
-              <span className="inline-block px-4 py-2 bg-blue-600/20 border border-blue-400/30 rounded-full text-blue-400 backdrop-blur-sm">
-                Get in Touch
-              </span>
-            </motion.div>
-            <h1 className="text-4xl lg:text-5xl text-white mb-6">
-              Let's Start Your Shipping Journey
-            </h1>
-            <p className="text-lg text-gray-300">
-              Have questions or need a customized quote? Our team of logistics experts is ready to help you find the perfect solution.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+            <section className="relative min-h-170 h-[min(860px,100svh)] flex items-center justify-center overflow-hidden">
+              <div className="absolute inset-0 z-0">
+                <img
+                  src={shipImage}
+                  alt="Cargo ship at sea"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(8,29,48,0.94)_0%,rgba(16,42,67,0.72)_54%,rgba(18,184,156,0.18)_100%)]" />
+              </div>
+      
+              <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="mb-6"
+                >
+                  <span className="inline-block px-4 py-2 bg-blue-600/20 border border-blue-400/30 rounded-full text-blue-400 backdrop-blur-sm">
+                    Get in Touch
+                  </span>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <motion.h1
+                    className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-white mb-10 max-w-4xl mx-auto"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.8 }}
+                  >
+                    Let's Start Your Shipping Journey
+                  </motion.h1>
+                  <motion.p
+                    className="text-base sm:text-xl leading-relaxed text-white/90 max-w-2xl mx-auto"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.8 }}
+                  >
+                     Have questions or need a customized quote? Our team of logistics experts is ready to help you find the perfect solution.
+                  </motion.p>
+                </motion.div>
+              </div>
+      
+              {/* Scroll Indicator */}
+              <motion.div
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 mb-6"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+              >
+                <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1">
+                  <div className="w-1.5 h-3 bg-white/50 rounded-full" />
+                </div>
+              </motion.div>
+            </section>
+
 
       {/* Contact Info Cards */}
       <section className="py-20 bg-white">
@@ -104,7 +136,7 @@ const handleChange = (e) => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -8 }}
-                  className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-linear-to-br from-blue-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6 text-white" />
@@ -335,18 +367,18 @@ const handleChange = (e) => {
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
-                    <MapPin className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <MapPin className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
                     <div>
                       <p className="text-slate-900">123 Port Avenue</p>
                       <p className="text-gray-600">New York, NY 10001</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 p-4 bg-blue-50 rounded-lg">
-                    <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <Phone className="w-5 h-5 text-blue-600 shrink-0" />
                     <p className="text-slate-900">+1 (234) 567-890</p>
                   </div>
                   <div className="flex items-center gap-3 p-4 bg-blue-50 rounded-lg">
-                    <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <Mail className="w-5 h-5 text-blue-600 shrink-0" />
                     <p className="text-slate-900">info@swiftship.com</p>
                   </div>
                 </div>
@@ -357,7 +389,7 @@ const handleChange = (e) => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+      <section className="py-20 bg-linear-to-br from-slate-900 to-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Ship, Plane, Truck, Warehouse, Globe, Clock, Shield, Award, ChevronLeft, ChevronRight } from 'lucide-react';
+import shipImage from '../assets/shipImage1.jpg';
+import shipImage1 from '../assets/shipImage7.jpg';
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroSlides = [
     {
-      image: 'https://images.unsplash.com/photo-1735047974891-df59713d8192?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJnbyUyMHNoaXAlMjBjb250YWluZXIlMjBwb3J0fGVufDF8fHx8MTc2NTU5OTc3Mnww&ixlib=rb-4.1.0&q=80&w=1080',
+      image: shipImage,
       title: 'Global Shipping Solutions',
       subtitle: 'Connecting continents through reliable ocean freight services',
     },
@@ -18,7 +20,7 @@ export default function HomePage() {
       subtitle: 'Express delivery solutions for time-sensitive cargo',
     },
     {
-      image: 'https://images.unsplash.com/photo-1624383828664-3a1c84526d1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZWxpdmVyeSUyMHRydWNrJTIwaGlnaHdheXxlbnwxfHx8fDE3NjU1MjI1OTB8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: shipImage1,
       title: 'Land Transportation',
       subtitle: 'Efficient ground shipping across regions',
     },
@@ -36,25 +38,29 @@ export default function HomePage() {
       icon: Ship,
       title: 'Ocean Freight',
       description: 'Cost-effective shipping solutions for large cargo volumes across international waters.',
-      color: 'blue',
+      iconWrapClass: 'bg-blue-100',
+      iconClass: 'text-blue-600',
     },
     {
       icon: Plane,
       title: 'Air Freight',
       description: 'Fast and secure air cargo services for time-critical shipments worldwide.',
-      color: 'sky',
+      iconWrapClass: 'bg-sky-100',
+      iconClass: 'text-sky-600',
     },
     {
       icon: Truck,
       title: 'Land Transportation',
       description: 'Reliable ground transportation for domestic and cross-border deliveries.',
-      color: 'cyan',
+      iconWrapClass: 'bg-cyan-100',
+      iconClass: 'text-cyan-600',
     },
     {
       icon: Warehouse,
       title: 'Warehousing & Logistics',
       description: 'State-of-the-art storage facilities with comprehensive inventory management.',
-      color: 'teal',
+      iconWrapClass: 'bg-teal-100',
+      iconClass: 'text-teal-600',
     },
   ];
 
@@ -99,7 +105,7 @@ export default function HomePage() {
     return (
     <div className="min-h-screen overflow-hidden">
       {/* Hero Section with Carousel */}
-      <section className="relative min-h-[680px] h-[100svh] max-h-[900px]">
+      <section className="relative min-h-170 h-svh max-h-225">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -109,7 +115,7 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
             className="absolute inset-0"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/60 z-10" />
+            <div className="absolute inset-0 bg-linear-to-r from-slate-900/90 to-slate-900/60 z-10" />
             <img
               src={heroSlides[currentSlide].image}
               alt={heroSlides[currentSlide].title}
@@ -288,8 +294,8 @@ export default function HomePage() {
                   whileHover={{ y: -8 }}
                   className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
                 >
-                  <div className={`w-14 h-14 bg-${service.color}-100 rounded-lg flex items-center justify-center mb-4`}>
-                    <Icon className={`w-7 h-7 text-${service.color}-600`} />
+                  <div className={`w-14 h-14 ${service.iconWrapClass} rounded-lg flex items-center justify-center mb-4`}>
+                    <Icon className={`w-7 h-7 ${service.iconClass}`} />
                   </div>
                   <h3 className="text-xl text-slate-900 mb-3">{service.title}</h3>
                   <p className="text-gray-600 mb-4">{service.description}</p>
@@ -308,7 +314,7 @@ export default function HomePage() {
       </section>
 
            {/* Features Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+      <section className="py-20 bg-linear-to-br from-slate-900 to-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
